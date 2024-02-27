@@ -1,6 +1,6 @@
 ﻿using graph.Enums;
 
-namespace graph.Model
+namespace graph.Components
 {
     public class DirectedMeta
     {

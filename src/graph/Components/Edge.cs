@@ -2,8 +2,8 @@
 {
 
     // Just an Edge
-    public record Edge<T>(Node<T> Src, Node<T> Dest);
+    public record Edge<T, U>(T Src, T Dest) where T : Node<U>;
 
     // An Edge with Optional Metadata
-    public record Edge<T, U>(Node<T> Src, Node<T> Dest, U? Meta): Edge<T>(Src, Dest);
+    public record Edge<T, U, V>(T Src, T Dest, V? Meta): Edge<T, U>(Src, Dest) where T : Node<U>;
 }
