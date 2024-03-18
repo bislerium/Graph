@@ -6,7 +6,6 @@ namespace graph.Contracts
     public interface IGraph<S, T, U>
         where S : Edge<T, U>
         where T : Node<U>
-        where U : class
 
     {
         GraphType GraphType { get; }
@@ -22,9 +21,11 @@ namespace graph.Contracts
         bool ContainsNode(T node);
     }
 
+    public interface IGraph<U> : IGraph<Edge<Node<U>, U>, Node<U>, U>;
+
     public interface IGraph<S, T, U, V>: IGraph<S, T, U> 
         where S : Edge<T, U, V>
-        where T : Node<U>
-        where U : class
-        where V : class;
+        where T : Node<U>;
+
+    public interface IGraph<U, V> : IGraph<U>, IGraph<Edge<Node<U>, U, V>, Node<U>, U, V>;
 }

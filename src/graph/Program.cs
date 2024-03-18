@@ -1,5 +1,6 @@
 ﻿using graph.Components;
 using graph.Contracts;
+using graph.Implementations.InMemory;
 
 namespace graph
 {
@@ -7,7 +8,9 @@ namespace graph
     {
         static void Main(string[] args)
         {
-            IGraph<Edge<int, string>, int, string> man;
+            DirectedGraph<int, int> dp = new();
+
+            
         }
     }
 }
